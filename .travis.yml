@@ -30,7 +30,7 @@ before_install:
   - cd /opt
   - mkdir -p atlassian/pipelines/agent/build/tmp
   - cd atlassian/pipelines/agent/build/tmp
-  - cp -r /tmp/devstack .
+  - cp -r /home/travis/build/sanjaydatasciencedojo/devstack .
   - dir
   - make requirements
   - make dev.clone
