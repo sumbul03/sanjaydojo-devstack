@@ -8,6 +8,7 @@ if [[ $DEVSTACK == 'lms' ]]; then
     make dev.up
     sleep 60  # LMS needs like 60 seconds to come up
     make healthchecks
+    make lms-static
     make validate-lms-volume
     # Disable e2e-tests until either:
     # * tests are less flaky
