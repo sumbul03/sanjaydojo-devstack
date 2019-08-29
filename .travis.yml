@@ -6,7 +6,7 @@ python:
   - "3.5"
 
 env:
-  - DEVSTACK_WORKSPACE=/tmp DOCKER_COMPOSE_VERSION=1.13.0 SHALLOW_CLONE=1 DEVSTACK='lms'
+  - DEVSTACK_WORKSPACE=/opt/atlassian/pipelines/agent/build/tmp DOCKER_COMPOSE_VERSION=1.13.0 SHALLOW_CLONE=1 DEVSTACK='lms'
   - DEVSTACK_WORKSPACE=/tmp DOCKER_COMPOSE_VERSION=1.13.0 SHALLOW_CLONE=1 DEVSTACK='analytics_pipeline'
 
 services:
@@ -26,7 +26,11 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose --version
-
+  - cd /opt
+  - mkdir -p atlassian/pipelines/agent/build/tmp
+  - cd atlassian/pipelines/agent/build/tmp
+  - cp -r /tmp/devstack .
+  - dir
   - make requirements
   - make dev.clone
   - if [[ $DEVSTACK == 'lms' ]]; then make pull; fi
