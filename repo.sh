@@ -103,7 +103,7 @@ _clone ()
                 echo ${OPENEDX_RELEASE}
                 git fetch origin open-release/${OPENEDX_RELEASE}
                 git branch -a
-                git checkout ${OPENEDX_RELEASE}
+                git checkout open-release/${OPENEDX_RELEASE}
             fi
         fi
     done
