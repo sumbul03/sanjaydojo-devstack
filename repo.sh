@@ -92,6 +92,8 @@ _clone ()
                 sleep 10
             else
                 git clone $repo
+                whoami
+                sleep 10
             fi
             if [ -n "${OPENEDX_RELEASE}" ]; then
                 git checkout open-release/${OPENEDX_RELEASE}
