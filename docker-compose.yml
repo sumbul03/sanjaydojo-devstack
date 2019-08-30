@@ -215,7 +215,7 @@ services:
     ports:
       - "3141:3141"
     volumes:
-      - devpi_data:/data
+      - $BITBUCKET_CLONE_DIR/devpi_data:/data
 
 volumes:
   discovery_assets:
