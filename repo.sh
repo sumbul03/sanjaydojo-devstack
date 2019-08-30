@@ -101,7 +101,7 @@ _clone ()
                 cd $name
                 pwd
                 echo ${OPENEDX_RELEASE}
-                git fetch origin open-release/${OPENEDX_RELEASE}
+                git fetch origin open-release/${OPENEDX_RELEASE}:open-release/${OPENEDX_RELEASE}
                 git branch -a
                 git checkout open-release/${OPENEDX_RELEASE}
             fi
