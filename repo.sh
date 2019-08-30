@@ -41,6 +41,7 @@ _checkout ()
 {
     repos_to_checkout=("$@")
     pwd
+    dir
     if [ -z "$OPENEDX_RELEASE" ]; then
         branch="master"
     else
@@ -87,6 +88,7 @@ _clone ()
         else
             if [ "${SHALLOW_CLONE}" == "1" ]; then
                 git clone --depth=1 $repo
+                dir
             else
                 git clone $repo
             fi
