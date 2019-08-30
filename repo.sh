@@ -104,6 +104,7 @@ _clone ()
                 git fetch origin open-release/${OPENEDX_RELEASE}:open-release/${OPENEDX_RELEASE}
                 git branch -a
                 git checkout open-release/${OPENEDX_RELEASE}
+                cd ..
             fi
         fi
     done
