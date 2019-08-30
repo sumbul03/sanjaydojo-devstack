@@ -40,7 +40,7 @@ name_pattern=".*/(.*).git"
 _checkout ()
 {
     repos_to_checkout=("$@")
-
+    pwd
     if [ -z "$OPENEDX_RELEASE" ]; then
         branch="master"
     else
