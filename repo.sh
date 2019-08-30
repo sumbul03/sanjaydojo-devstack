@@ -88,7 +88,8 @@ _clone ()
         else
             if [ "${SHALLOW_CLONE}" == "1" ]; then
                 git clone --depth=1 $repo
-                dir
+                whoami
+                sleep 10
             else
                 git clone $repo
             fi
