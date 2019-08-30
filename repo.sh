@@ -89,13 +89,16 @@ _clone ()
             if [ "${SHALLOW_CLONE}" == "1" ]; then
                 git clone --depth=1 $repo
                 whoami
+                dir
                 sleep 10
             else
                 git clone $repo
+                dir
                 whoami
                 sleep 10
             fi
             if [ -n "${OPENEDX_RELEASE}" ]; then
+                cd name
                 git checkout open-release/${OPENEDX_RELEASE}
             fi
         fi
