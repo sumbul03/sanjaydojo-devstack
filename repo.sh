@@ -12,6 +12,7 @@ if [ -z "$DEVSTACK_WORKSPACE" ]; then
     exit 1
 elif [ -d "$DEVSTACK_WORKSPACE" ]; then
     cd $DEVSTACK_WORKSPACE
+    pwd
 else
     echo "Workspace directory $DEVSTACK_WORKSPACE doesn't exist"
     exit 1
