@@ -98,6 +98,7 @@ _clone ()
                 sleep 10
             fi
             if [ -n "${OPENEDX_RELEASE}" ]; then
+                pwd
                 cd name
                 git checkout open-release/${OPENEDX_RELEASE}
             fi
