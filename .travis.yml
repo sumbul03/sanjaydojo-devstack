@@ -27,6 +27,7 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
   - docker-compose --version
+  - git log
   - make requirements
   - make dev.clone
   - if [[ $DEVSTACK == 'lms' ]]; then make pull; fi
