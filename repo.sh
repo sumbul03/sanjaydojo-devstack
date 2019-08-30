@@ -100,6 +100,7 @@ _clone ()
                 echo $name
                 cd $name
                 pwd
+                git fetch origin open-release/${OPENEDX_RELEASE}
                 git checkout open-release/${OPENEDX_RELEASE}
             fi
         fi
