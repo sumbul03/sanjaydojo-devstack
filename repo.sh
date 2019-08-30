@@ -99,7 +99,7 @@ _clone ()
             fi
             if [ -n "${OPENEDX_RELEASE}" ]; then
                 pwd
-                cd name
+                cd $name
                 git checkout open-release/${OPENEDX_RELEASE}
             fi
         fi
