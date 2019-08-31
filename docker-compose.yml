@@ -150,7 +150,7 @@ services:
       # - "18003:18003"
       # - "18031:18031"
     volumes:
-      - ./edxapp_lms_assets:/edx/var/edxapp/staticfiles/
+      - $BITBUCKET_CLONE_DIR/edxapp_lms_assets:/edx/var/edxapp/staticfiles/
 
   edx_notes_api:
     command: bash -c 'source /edx/app/edx_notes_api/edx_notes_api_env && while true; do python /edx/app/edx_notes_api/edx_notes_api/manage.py runserver 0.0.0.0:18120 --settings notesserver.settings.devstack; sleep 2; done'
