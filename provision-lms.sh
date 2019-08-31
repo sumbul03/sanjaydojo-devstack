@@ -10,6 +10,7 @@ apps=( lms studio )
 
 # Bring edxapp containers online
 for app in "${apps[@]}"; do
+    echo $DOCKER_COMPOSE_FILES
     docker-compose $DOCKER_COMPOSE_FILES up -d $app
 done
 
