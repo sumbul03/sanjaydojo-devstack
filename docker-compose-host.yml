@@ -3,36 +3,36 @@ version: "2.1"
 services:
   credentials:
     volumes:
-      - $BITBUCKET_CLONE_DIR/credentials:/edx/app/credentials/credentials
+      - ./credentials:/edx/app/credentials/credentials
       - credentials_node_modules:/edx/app/credentials/credentials/node_modules
-      - $BITBUCKET_CLONE_DIR/src:/edx/src
+      - ./src:/edx/src
   discovery:
       volumes:
-      - $BITBUCKET_CLONE_DIR/course-discovery:/edx/app/discovery/discovery
+      - ./course-discovery:/edx/app/discovery/discovery
       - discovery_node_modules:/edx/app/discovery/discovery/node_modules
-      - $BITBUCKET_CLONE_DIR/src:/edx/src
+      - ./src:/edx/src
   ecommerce:
     volumes:
-      - $BITBUCKET_CLONE_DIR/ecommerce:/edx/app/ecommerce/ecommerce
+      - ./ecommerce:/edx/app/ecommerce/ecommerce
       - ecommerce_node_modules:/edx/app/ecommerce/ecommerce/node_modules
-      - $BITBUCKET_CLONE_DIR/src:/edx/src
+      - ./src:/edx/src
   lms:
     volumes:
-      - $BITBUCKET_CLONE_DIR/edx-platform:/edx/app/edxapp/edx-platform
+      - ./edx-platform:/edx/app/edxapp/edx-platform
       - edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
-      - $BITBUCKET_CLONE_DIR/src:/edx/src
+      - ./src:/edx/src
   edx_notes_api:
     volumes:
-      - $BITBUCKET_CLONE_DIR/edx-notes-api:/edx/app/edx_notes_api/edx_notes_api
-      - $BITBUCKET_CLONE_DIR/src:/edx/src
+      - ./edx-notes-api:/edx/app/edx_notes_api/edx_notes_api
+      - ./src:/edx/src
   studio:
     volumes:
-      - $BITBUCKET_CLONE_DIR/edx-platform:/edx/app/edxapp/edx-platform
+      - ./edx-platform:/edx/app/edxapp/edx-platform
       - edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
-      - $BITBUCKET_CLONE_DIR/src:/edx/src
+      - ./src:/edx/src
   forum:
     volumes:
-      - $BITBUCKET_CLONE_DIR/cs_comments_service:/edx/app/forum/cs_comments_service
+      - ./cs_comments_service:/edx/app/forum/cs_comments_service
       
 volumes:
   credentials_node_modules:
