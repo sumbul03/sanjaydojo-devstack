@@ -3,36 +3,36 @@ version: "2.1"
 services:
   credentials:
     volumes:
-      - ./credentials:/edx/app/credentials/credentials
-      - ./credentials_node_modules:/edx/app/credentials/credentials/node_modules
-      - ./src:/edx/src
+      - ../credentials:/edx/app/credentials/credentials
+      - ../credentials_node_modules:/edx/app/credentials/credentials/node_modules
+      - ../src:/edx/src
   discovery:
       volumes:
-      - ./course-discovery:/edx/app/discovery/discovery
-      - ./discovery_node_modules:/edx/app/discovery/discovery/node_modules
-      - ./src:/edx/src
+      - ../course-discovery:/edx/app/discovery/discovery
+      - ../discovery_node_modules:/edx/app/discovery/discovery/node_modules
+      - ../src:/edx/src
   ecommerce:
     volumes:
-      - ./ecommerce:/edx/app/ecommerce/ecommerce
-      - ./ecommerce_node_modules:/edx/app/ecommerce/ecommerce/node_modules
-      - ./src:/edx/src
+      - ../ecommerce:/edx/app/ecommerce/ecommerce
+      - ../ecommerce_node_modules:/edx/app/ecommerce/ecommerce/node_modules
+      - ../src:/edx/src
   lms:
     volumes:
-      - ./edx-platform:/edx/app/edxapp/edx-platform
-      - ./edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
-      - ./src:/edx/src
+      - ../edx-platform:/edx/app/edxapp/edx-platform
+      - ../edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
+      - ../src:/edx/src
   edx_notes_api:
     volumes:
-      - ./edx-notes-api:/edx/app/edx_notes_api/edx_notes_api
-      - ./src:/edx/src
+      - ../edx-notes-api:/edx/app/edx_notes_api/edx_notes_api
+      - ../src:/edx/src
   studio:
     volumes:
-      - ./edx-platform:/edx/app/edxapp/edx-platform
-      - ./edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
-      - ./src:/edx/src
+      - ../edx-platform:/edx/app/edxapp/edx-platform
+      - ../edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
+      - ../src:/edx/src
   forum:
     volumes:
-      - ./cs_comments_service:/edx/app/forum/cs_comments_service:cached
+      - ../cs_comments_service:/edx/app/forum/cs_comments_service:cached
       
 volumes:
   credentials_node_modules:
