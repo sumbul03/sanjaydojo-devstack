@@ -3,18 +3,18 @@ set -o pipefail
 set -x
 
 apps=( lms studio )
-
+echo $DEVSTACK_WORKSPACE
 # Load database dumps for the largest databases to save time
 ./load-db.sh edxapp
 ./load-db.sh edxapp_csmh
-
+echo $DEVSTACK_WORKSPACE
 # Bring edxapp containers online
 for app in "${apps[@]}"; do
     echo $app
     echo $DOCKER_COMPOSE_FILES
     docker-compose $DOCKER_COMPOSE_FILES up -d $app
 done
-
+echo $DEVSTACK_WORKSPACE
 docker-compose exec -T lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs'
 
 #Installing prereqs crashes the process
