@@ -11,6 +11,7 @@ if [ -z "$DEVSTACK_WORKSPACE" ]; then
     echo "need to set workspace dir"
     exit 1
 elif [ -d "$DEVSTACK_WORKSPACE" ]; then
+    echo $DEVSTACK_WORKSPACE
     cd $DEVSTACK_WORKSPACE
     pwd
 else
@@ -87,13 +88,13 @@ _clone ()
             printf "The [%s] repo is already checked out. Continuing.\n" $name
         else
             if [ "${SHALLOW_CLONE}" == "1" ]; then
-                cd devstack
+                pwd
                 git clone --depth=1 $repo
                 whoami
                 dir
                 sleep 10
             else
-                cd devstack
+                pwd
                 git clone $repo
                 sleep 10
             fi
