@@ -87,11 +87,13 @@ _clone ()
             printf "The [%s] repo is already checked out. Continuing.\n" $name
         else
             if [ "${SHALLOW_CLONE}" == "1" ]; then
+                cd devstack
                 git clone --depth=1 $repo
                 whoami
                 dir
                 sleep 10
             else
+                cd devstack
                 git clone $repo
                 sleep 10
             fi
