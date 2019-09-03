@@ -8,6 +8,7 @@ echo $DEVSTACK_WORKSPACE
 ./load-db.sh edxapp
 ./load-db.sh edxapp_csmh
 echo $DEVSTACK_WORKSPACE
+BITBUCKET_CLONE_DIR=/home/sanjaydatasciencedojo/tmp/devstack
 # Bring edxapp containers online
 for app in "${apps[@]}"; do
     echo $app
