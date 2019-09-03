@@ -7,15 +7,15 @@ echo $DEVSTACK_WORKSPACE
 # Load database dumps for the largest databases to save time
 ./load-db.sh edxapp
 ./load-db.sh edxapp_csmh
-echo $DEVSTACK_WORKSPACE
-export BITBUCKET_CLONE_DIR=/home/sanjaydatasciencedojo/tmp
+echo $DEVSTACK_WORKSPACE=/opt/atlassian/pipelines/agent/build/tmp
+export BITBUCKET_CLONE_DIR=/opt/atlassian/pipelines/agent/build/tmp
 # Bring edxapp containers online
 for app in "${apps[@]}"; do
     echo $app
     echo $DOCKER_COMPOSE_FILES
     docker-compose $DOCKER_COMPOSE_FILES up -d $app
 done
-export BITBUCKET_CLONE_DIR=/home/sanjaydatasciencedojo/tmp
+export BITBUCKET_CLONE_DIR=/opt/atlassian/pipelines/agent/build/tmp
 docker-compose exec -T lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && paver install_prereqs'
 
 #Installing prereqs crashes the process
