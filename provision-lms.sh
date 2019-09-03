@@ -8,14 +8,12 @@ echo $DEVSTACK_WORKSPACE
 ./load-db.sh edxapp
 ./load-db.sh edxapp_csmh
 echo $DEVSTACK_WORKSPACE
-DEVSTACK_WORKSPACE=/home/sanjaydatasciencedojo/tmp
 # Bring edxapp containers online
 for app in "${apps[@]}"; do
     echo $app
     echo $DOCKER_COMPOSE_FILES
     docker-compose $DOCKER_COMPOSE_FILES up -d $app
 done
-echo $DEVSTACK_WORKSPACE
 docker-compose exec -T lms bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && NO_PYTHON_UNINSTALL=1 paver install_prereqs'
 
 #Installing prereqs crashes the process
