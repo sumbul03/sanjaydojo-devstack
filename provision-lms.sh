@@ -33,7 +33,6 @@ docker-compose exec -T lms bash -c '/edx/app/edx_ansible/venvs/edx_ansible/bin/a
 
 # Fix missing vendor file by clearing the cache
 # Create static assets for both LMS and Studio
-for app in "${apps[@]}"; do
-    docker-compose exec -T $app bash -c 'source /edx/app/edxapp/edxapp_env && cd /edx/app/edxapp/edx-platform && paver update_assets --settings devstack_docker'
-done
+
+    
 
