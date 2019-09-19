@@ -24,7 +24,7 @@ repos=(
     "https://github.com/edx/credentials.git"
     "https://github.com/edx/cs_comments_service.git"
     "https://github.com/edx/ecommerce.git"
-    "https://github.com/sumbul03/edx-e2e-tests.git"
+    "https://github.com/Testorganization914/edx-e2e-tests.git"
     "https://github.com/edx/edx-notes-api.git"
     "https://github.com/edx/edx-platform.git"
     "https://github.com/edx/xqueue.git"
