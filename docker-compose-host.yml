@@ -1,11 +1,4 @@
 version: "2.1"
-
-services:
-  ecommerce:
-    volumes:
-      - ${BITBUCKET_CLONE_DIR}/ecommerce:/edx/app/ecommerce/ecommerce
-      - ${BITBUCKET_CLONE_DIR}/ecommerce_node_modules:/edx/app/ecommerce/ecommerce/node_modules
-      - ${BITBUCKET_CLONE_DIR}/src:/edx/src
   lms:
     volumes:
       - ${BITBUCKET_CLONE_DIR}/edx-platform:/edx/app/edxapp/edx-platform
