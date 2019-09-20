@@ -23,7 +23,7 @@ services:
       - ${BITBUCKET_CLONE_DIR}/edx-platform/common/test/data:/edx/app/edxapp/edx-platform/common/test/data
       
   edx_notes_api:
-    command: bash -c 'source /edx/app/edx_notes_api/edx_notes_api_env && while true; do python /edx/app/edx_notes_api/edx_notes_api/manage.py runserver 0.0.0.0:18120 --settings notesserver.settings.devstack; sleep 2; done''
+    command: bash -c 'source /edx/app/edx_notes_api/edx_notes_api_env && while true; do python /edx/app/edx_notes_api/edx_notes_api/manage.py runserver 0.0.0.0:18120 --settings notesserver.settings.devstack; sleep 2; done'
     container_name: edx.devstack.edx_notes_api
     depends_on:
       - devpi
