@@ -1,4 +1,5 @@
 version: "2.1"
+services:
   lms:
     volumes:
       - ${BITBUCKET_CLONE_DIR}/edx-platform:/edx/app/edxapp/edx-platform
