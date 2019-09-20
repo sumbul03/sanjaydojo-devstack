@@ -21,7 +21,25 @@ services:
     volumes:  # for file uploads
       - ${BITBUCKET_CLONE_DIR}/edx-e2e-tests/upload_files:/edx/app/e2e/edx-e2e-tests/upload_files
       - ${BITBUCKET_CLONE_DIR}/edx-platform/common/test/data:/edx/app/edxapp/edx-platform/common/test/data
-
+  edx_notes_api:
+	  command: bash -c 'source /edx/app/edx_notes_api/edx_notes_api_env && while true; do python /edx/app/edx_notes_api/edx_notes_api/manage.py runserver 0.0.0.0:18120 --settings notesserver.settings.devstack; sleep 2; done'
+	  container_name: edx.devstack.edx_notes_api
+	  depends_on:
+	    - devpi
+	    - elasticsearch
+	    - mysql
+	  image: edxops/notes:${OPENEDX_RELEASE:-latest}
+	  ports:
+	    - "18120:18120"
+	  environment:
+	    DB_ENGINE: "django.db.backends.mysql"
+	    DB_HOST: "edx.devstack.mysql"
+	    DB_NAME: "notes"
+	    DB_PASSWORD: "password"
+	    DB_PORT: "3306"
+	    DB_USER: "notes001"
+	    ENABLE_DJANGO_TOOLBAR: 1
+	    ELASTICSEARCH_URL: "http://edx.devstack.elasticsearch:9200"
   elasticsearch:
     container_name: edx.devstack.elasticsearch
     image: edxops/elasticsearch:devstack
