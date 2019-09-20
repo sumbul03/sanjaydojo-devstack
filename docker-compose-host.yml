@@ -1,16 +1,6 @@
 version: "2.1"
 
 services:
-  credentials:
-    volumes:
-      - ${BITBUCKET_CLONE_DIR}/credentials:/edx/app/credentials/credentials
-      - ${BITBUCKET_CLONE_DIR}/credentials_node_modules:/edx/app/credentials/credentials/node_modules
-      - ${BITBUCKET_CLONE_DIR}/src:/edx/src
-  discovery:
-      volumes:
-      - ${BITBUCKET_CLONE_DIR}/course-discovery:/edx/app/discovery/discovery
-      - ${BITBUCKET_CLONE_DIR}/discovery_node_modules:/edx/app/discovery/discovery/node_modules
-      - ${BITBUCKET_CLONE_DIR}/src:/edx/src
   ecommerce:
     volumes:
       - ${BITBUCKET_CLONE_DIR}/ecommerce:/edx/app/ecommerce/ecommerce
@@ -30,12 +20,7 @@ services:
       - ${BITBUCKET_CLONE_DIR}/edx-platform:/edx/app/edxapp/edx-platform
       - ${BITBUCKET_CLONE_DIR}/edxapp_node_modules:/edx/app/edxapp/edx-platform/node_modules
       - ${BITBUCKET_CLONE_DIR}/src:/edx/src
-  forum:
-    volumes:
-      - ${BITBUCKET_CLONE_DIR}/cs_comments_service:/edx/app/forum/cs_comments_service:cached
+ 
       
 volumes:
-  credentials_node_modules:
-  discovery_node_modules:
-  ecommerce_node_modules:
   edxapp_node_modules:
