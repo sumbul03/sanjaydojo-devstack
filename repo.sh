@@ -84,26 +84,17 @@ _clone ()
         else
             if [ "${SHALLOW_CLONE}" == "1" ]; then
                 pwd
-                git clone --depth=1 $repo
+                git clone --depth=1 --branch=open-release/hawthorn.master $repo
                 whoami
                 dir
                 sleep 10
             else
                 pwd
-                git clone $repo
+                git clone --depth=1 --branch=open-release/hawthorn.master $repo
+                dir
                 sleep 10
             fi
-            if [ -n "${OPENEDX_RELEASE}" ]; then
-                pwd
-                echo $name
-                cd $name
-                pwd
-                echo ${OPENEDX_RELEASE}
-                git fetch origin open-release/${OPENEDX_RELEASE}:open-release/${OPENEDX_RELEASE}
-                git branch -a
-                git checkout open-release/${OPENEDX_RELEASE}
-                cd ..
-            fi
+            
         fi
     done
     cd - &> /dev/null
